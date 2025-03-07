@@ -111,7 +111,7 @@
     <div class="moon" onclick="toggleMode()"></div>
     <div class="stars"></div>
     <div class="container">
-        <a href="#" class="ooo-button" onclick="event.preventDefault();">.ooo</a>
+        <a href="index.html" class="ooo-button" onclick="handleHomeClick(event);">.ooo</a>
         <a href="socials.html" class="socials-button">Socials</a>
     </div>
     <script>
@@ -169,6 +169,14 @@
                 starsContainer.appendChild(star);
             }
         }
+        
+        function handleHomeClick(event) {
+            const currentPath = window.location.pathname;
+            if (currentPath.endsWith("index.html") || currentPath === "/") {
+                event.preventDefault(); // Stop navigation if already on homepage
+            }
+        }
+
     </script>
 </body>
 </html>
